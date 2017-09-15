@@ -43,9 +43,26 @@ var getGif = function() {
 		});
 		return gif;
 	}
-//grab results div in html
-x = document.getElementById('result_1');
-y = document.getElementById('result_2');
+	//grab results div in html
+	x = document.getElementById('result_1');
+	y = document.getElementById('result_2');
+	
+	window.onload = function(){
+		div = document.createElement('div');
+		div.id = "randomAPI";
+		document.getElementById('user-form').appendChild(div);
+
+		var src = "http://thecatapi.com/api/images/get?format=src&type=gif"
+		img = document.createElement('img');
+		img.src = src;
+		document.getElementById('randomAPI').appendChild(img);
+
+	}
+	
+
+
+
+
 x.innerHTML = "Today's date: " + (Date());
 //display json data to html with DOM manipulation
 $('#submit').on("click", function() {
@@ -75,7 +92,8 @@ $('#submit').on("click", function() {
 	y.innerHTML += "breed: " + myobject.pet[1].breed + "<br>";
 	y.innerHTML += "weight: " + myobject.pet[1].weight + "lb" + "<br>";
 	y.innerHTML += "chip#: " + myobject.pet[1].chip + "<br>";
-	y.innerHTML += "</p>";
+	y.innerHTML += "</p>"; 
+	something();
 });
 //clear the content of results div
 $('#reset').on("click", function() {
@@ -87,9 +105,13 @@ $('#reset').on("click", function() {
 //to display my cats
 	$('#submit').on("click", function() {
 		var src = "https://drive.google.com/a/hawk.iit.edu/uc?export=view&id=0B8tOr2Ut50JmaFJZNmRBb2xOUm8",
+		div = document.createElement('div'); //creating a div tag
+		div.id = "left";						 //assignning id left to the div
+		document.getElementById('result_2').appendChild(div) //append the div to result_2 div
+
 	    img = document.createElement('img');
 		img.src = src;
-		document.getElementById('result_1').appendChild(img);
+		document.getElementById('result_2').appendChild(img);
 	});
 
 

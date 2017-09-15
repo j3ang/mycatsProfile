@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>API Project one</title>
+  <title>My Pet's Profile</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no"  />
   <link rel="stylesheet" href="screen.css">
 </head>
 
 <body>
-  <form id="user-form" method="get" action="#null">
-    <h1>Find Pet and Owner Details</h1>
+  <div id="user-form">
+    <h1>Forget how old your cat is?</h1>
     
-    <input type="submit" name="submit" id="submit" value="Find Owner" />
-    <button type="button" name="reset" id="reset">reset</button>
-    <div id="result_1"></div>
-
-    <div id="result_2">
+    <button type="submit" name="submit" id="submit">Detail</button>
+    <button type="button" name="reset" id="reset">Reset</button>
+    <div id="flex_wrapper">
+      <div id="result_1"></div>
+      <div id="result_2"></div>
     </div>
-  </form>
+
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="site.js"></script>

@@ -49,10 +49,17 @@ table {
 
 
 /***********************************************/
+              /*fonts*/
+/***********************************************/
+ @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+
+/***********************************************/
 
               /*style Reset Sheet*/
 
 /***********************************************/
+
 /* page structure */
 #user-form {
   display: block;
@@ -69,12 +76,56 @@ table {
 }
 
 h1 {
-  color:blue;
+  color:green;
   font-size: 3em;
-  font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Amatic SC', cursive, Helvetica, Arial, sans-serif;
+}
+
+button{
+  cursor: pointer; 
+  cursor: hand; 
 }
 
 #result_1, #result_2{
   text-transform: capitalize;
 }
+
+#result_2{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
+#flex_wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
