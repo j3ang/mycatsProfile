@@ -9,15 +9,24 @@
 
 <body>
   <form id="user-form" method="get" action="#null">
-  <h1>Find Pet and Owner Details</h1>
+    <h1>Find Pet and Owner Details</h1>
     
     <input type="submit" name="submit" id="submit" value="Find Owner" />
     <button type="button" name="reset" id="reset">reset</button>
-   	<div id="result_1"></div>
-   	<div id="result_2"></div>
+    <div id="result_1"></div>
+
+    <div id="result_2"></div>
   </form>
 
+  <script type="text/javascript">
+    document.getElementById('submit').onclick = function() {
+      var src = 'https://drive.google.com/a/hawk.iit.edu/uc?export=view&id=0B8tOr2Ut50JmaFJZNmRBb2xOUm8',
+      img = document.createElement('img');
+      img.src = src;
+      document.getElementById('result_1').appendChild(img);
+    }
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="site.js"></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="site.js"></script>
 </html>

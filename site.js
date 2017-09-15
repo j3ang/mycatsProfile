@@ -41,6 +41,17 @@ var myobject = {
 			}
 };
 
+//function to get gif
+var getGif = function(){
+	var gif = [];
+	$('img').each(function(){
+		var data = $(this).data('alt');
+		gif.push(data);
+	});
+	return gif;
+}
+
+
 //grab results div in html
 x = document.getElementById('result_1');
 y = document.getElementById('result_2');
@@ -79,6 +90,15 @@ $('#submit').on("click", function(){
 
 	y.innerHTML += "</p>";
 
+});
+
+$('#submit').on("click", function(){
+	var gif = [];
+	$('img').each(function(){
+		var data = $(this).data('alt');
+		gif.push(data);
+	});
+	return gif;
 });
 
 //clear the content of results div
