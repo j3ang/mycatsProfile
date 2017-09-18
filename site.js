@@ -66,7 +66,7 @@ y.innerHTML = "Today's date: " + (Date());
 //display json data to html with DOM manipulation
 $('#submit').on("click", function() {
     document.getElementById('randomAPI').innerHTML = "";
-
+    document.getElementById('flex_wrapper').style.marginTop = "65px";
     y.innerHTML += "<p>" + "<br>" + "pet's detail: " + "<br>";
     y.innerHTML += "name: " + myobject.pet[0].name + "<br>";
     y.innerHTML += "gender: " + myobject.pet[0].sex + "<br>";
