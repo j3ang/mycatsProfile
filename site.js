@@ -26,14 +26,6 @@ var myobject = {
     }
 };
 
-
-
-// unsolved problem --- To display the detail only once. 
-// 					--- create seperation in between two cat's details
-
-
-
-
 //Display random cat API
 function rCAT() {
     div = document.createElement('div');
@@ -66,11 +58,11 @@ y = document.getElementById('result_2');
 
 window.onload = rCAT;
 
+// Unsolved problem 
+// To display the detail only once. 
+// create seperation in between two cat's details
 
 y.innerHTML = "Today's date: " + (Date());
-
-
-
 //display json data to html with DOM manipulation
 $('#submit').on("click", function() {
     document.getElementById('randomAPI').innerHTML = "";
@@ -85,10 +77,8 @@ $('#submit').on("click", function() {
     y.innerHTML += "weight: " + myobject.pet[0].weight + "lb" + "<br>";
     y.innerHTML += "spayed: " + tfValid(myobject.pet[0].spayed) + "<br>";
     y.innerHTML += "<br>";
-    y.innerHTML += "\n";
-    document.write("\n\n");
+    y.innerHTML += "<br>";
     y.innerHTML += "name: " + myobject.pet[1].name + "<br>";
-
     y.innerHTML += "gender: " + myobject.pet[1].sex + "<br>";
     y.innerHTML += "species: " + myobject.pet[1].species + "<br>";
     y.innerHTML += "DOB: " + myobject.pet[1].DOB + "<br>";
@@ -112,7 +102,7 @@ $('#submit').on("click", function() {
     div.id = "left"; //assignning id left to the div
     document.getElementById('result_1').appendChild(div) //append the div to result_2 div
 
-    // img = document.createElement('img');
+    //    img = document.createElement('img');
     // img.src = src;
     // document.getElementById('result_2').appendChild(img);
 
@@ -143,4 +133,3 @@ var something = (function() {
 $('#reset').on("click", function() {
     window.location.reload();
 });
-
