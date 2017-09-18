@@ -97,14 +97,22 @@ $('#submit').on("click", function() {
 
 //to display my cats
 	$('#submit').on("click", function() {
-		var src = "https://drive.google.com/a/hawk.iit.edu/uc?export=view&id=0B8tOr2Ut50JmaFJZNmRBb2xOUm8",
+
+		var src = "https://www.instagram.com/p/BZFcEXwg1Sm/embed/",
 		div = document.createElement('div'); //creating a div tag
 		div.id = "left";						 //assignning id left to the div
 		document.getElementById('result_2').appendChild(div) //append the div to result_2 div
 
-	    img = document.createElement('img');
-		img.src = src;
-		document.getElementById('result_2').appendChild(img);
+	 //    img = document.createElement('img');
+		// img.src = src;
+		// document.getElementById('result_2').appendChild(img);
+
+		iframe  = document.createElement('iframe');
+		iframe.src = src;
+		iframe.width = "400";
+		iframe.height = "480";
+		document.getElementById('result_2').appendChild(iframe);
+		
 	});
 
 
