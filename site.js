@@ -67,7 +67,7 @@ y.innerHTML = "Today's date: " + (Date());
 $('#submit').on("click", function() {
     document.getElementById('randomAPI').innerHTML = "";
     document.getElementById('flex_wrapper').style.marginTop = "65px";
-    y.innerHTML += "<p>" + "<br>" + "pet's detail: " + "<br>";
+    y.innerHTML += "<br>" + "pet's detail: " + "<br>";
     y.innerHTML += "name: " + myobject.pet[0].name + "<br>";
     y.innerHTML += "gender: " + myobject.pet[0].sex + "<br>";
     y.innerHTML += "species: " + myobject.pet[0].species + "<br>";
@@ -87,7 +87,6 @@ $('#submit').on("click", function() {
     y.innerHTML += "weight: " + myobject.pet[1].weight + "lb" + "<br>";
     y.innerHTML += "spayed: " + tfValid(myobject.pet[1].spayed) + "<br>";
     y.innerHTML += "chip#: " + myobject.pet[1].chip + "<br>";
-    y.innerHTML += "</p>";
     something();
 });
 
