@@ -58,9 +58,6 @@ y = document.getElementById('result_2');
 
 window.onload = rCAT;
 
-// Unsolved problem 
-// To display the detail only once. 
-// create seperation in between two cat's details
 
 y.innerHTML = "Today's date: " + (Date());
 //display json data to html with DOM manipulation
@@ -101,7 +98,7 @@ $('#submit').on("click", function() {
     div.id = "left"; //assignning id left to the div
     document.getElementById('result_1').appendChild(div) //append the div to result_2 div
 
-    //    img = document.createElement('img');
+    // img = document.createElement('img');
     // img.src = src;
     // document.getElementById('result_2').appendChild(img);
 
