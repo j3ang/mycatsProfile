@@ -51,8 +51,7 @@ table {
 /***********************************************/
               /*fonts*/
 /***********************************************/
- @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
-
+ @import url('https://fonts.googleapis.com/css?family=Economica|Special+Elite');
 
 /***********************************************/
 
@@ -78,7 +77,7 @@ table {
 h1 {
   color:green;
   font-size: 3em;
-  font-family: 'Amatic SC', cursive, Helvetica, Arial, sans-serif;
+  font-family: 'Special Elite', cursive, 'Economica', Helvetica, Arial, sans-serif;
 }
 
 button{
