@@ -102,6 +102,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 //detail button - display json data to html with DOM manipulation
 $('#detail').on("click", function() {
+
+    // validate if content has displayed, if so disable detail button
+    if (document.getElementById('reset').disabled = true) {
+        document.getElementById('detail').disabled =true;
+    }
+
     showInfo();
     showIns();
 });
@@ -109,7 +115,8 @@ $('#detail').on("click", function() {
 //reset button - removes content in left and right section
 $('#reset').on("click", function() {
 
-
+    //enable detail button
+    document.getElementById('detail').disabled = false;
 
     l_section.innerHTML = "";
     r_section.innerHTML = "";
