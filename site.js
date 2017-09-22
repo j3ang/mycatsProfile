@@ -58,7 +58,8 @@ r = document.getElementById('content_right');
 document.addEventListener("DOMContentLoaded", function(event) {
 
     //disable reset button onload
-    document.getElementById('reset').disabled = true;
+    // document.getElementById('reset').disabled = true;
+    document.getElementById('reset').style.visibility = "hidden";
 
     //content on the left
     l_section = document.createElement('section');
@@ -117,6 +118,8 @@ $('#reset').on("click", function() {
 
     //enable detail button
     document.getElementById('detail').disabled = false;
+    document.getElementById('reset').style.visibility = "hidden";
+
 
     l_section.innerHTML = "";
     r_section.innerHTML = "";
@@ -127,6 +130,7 @@ function showInfo(){
 
     //enable reset button
     document.getElementById('reset').disabled = false;
+    document.getElementById('reset').style.visibility = "visible";
 
     //clear out content first
     l_section.innerHTML = "";
