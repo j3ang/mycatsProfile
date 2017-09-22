@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     time.id = "time";
     var d = document.createTextNode(Date());
     time.appendChild(d);
-    main.appendChild(time);
+    flex_wrapper.appendChild(time);
     console.log("Time loaded");
 
 });
