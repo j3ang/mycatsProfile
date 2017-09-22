@@ -57,6 +57,9 @@ r = document.getElementById('content_right');
 //page onload 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    //disable reset button onload
+    document.getElementById('reset').disabled = true;
+
     //content on the left
     l_section = document.createElement('section');
     l_section.id = "content_left";
@@ -105,12 +108,19 @@ $('#detail').on("click", function() {
 
 //reset button - removes content in left and right section
 $('#reset').on("click", function() {
+
+
+
     l_section.innerHTML = "";
     r_section.innerHTML = "";
 });
 
 //function to show infomation of pets from the json objects
 function showInfo(){
+
+    //enable reset button
+    document.getElementById('reset').disabled = false;
+
     //clear out content first
     l_section.innerHTML = "";
     r_section.innerHTML = "";
