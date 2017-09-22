@@ -66,9 +66,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var src = "http://thecatapi.com/api/images/get?format=src&type=gif";
     l_img.src = src;
     l_img.alt = "cats_API";
-    //dynamic inline style
-    l_img.style.width = "400px";
-    l_img.style.margin = "0 auto";
     l_section.appendChild(l_img);
     flex.appendChild(l_section);
     console.log("img_left loaded");
@@ -80,9 +77,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     r_img.id = "img_right";
     r_img.src = src;
     r_img.alt = "cats_API";
-    //dynamic inline style
-    r_img.style.width = "400px";
-    r_img.style.margin = "0 auto";
     r_section.appendChild(r_img);
     flex.appendChild(r_section);
     console.log("img_right loaded");
@@ -95,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     main.appendChild(time);
     console.log("Time loaded");
 
-    flex.style.margin = "100px 0 10px 0";
 });
 
 //detail button - display json data to html with DOM manipulation
@@ -186,8 +179,6 @@ function showIns() {
     iframe = document.createElement("iframe");
     iframe.src = src;
     iframe.setAttribute("scrolling", "no");
-    iframe.width = "400";
-    iframe.height = "650";
     l_section.appendChild(iframe) //append the div to result_2 div
 }
 
