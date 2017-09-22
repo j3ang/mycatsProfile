@@ -1,3 +1,8 @@
+ /***********************************************/
+              /*fonts*/
+/***********************************************/
+ @import url('https://fonts.googleapis.com/css?family=Economica|Special+Elite');
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -29,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;style
+	line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -48,16 +53,6 @@ table {
 }
 
 
-/***********************************************/
-              /*fonts*/
-/***********************************************/
- @import url('https://fonts.googleapis.com/css?family=Economica|Special+Elite');
-
-/***********************************************/
-
-              /*style Reset Sheet*/
-
-/***********************************************/
 
 /* page structure */
 #main_content {
