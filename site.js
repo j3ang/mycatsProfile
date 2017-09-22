@@ -1,17 +1,17 @@
-//Hard coded json file
-var myobject = {
-
-    "pet": [{
-        "name": "jocko",
+//Hard coded json data
+var pets = {
+    
+"jocko": {
         "sex": "male",
         "species": "cat",
-        "age": "7.5 months",
+        "DOB": "1/1/2017",
         "color": "buff/tabby",
         "breed": "Domestic Medium Hair",
         "weight": "4.40",
         "spayed": "true",
-    }, {
-        "name": "rose",
+        "chip" : "982000410760935"
+    }, 
+"rose" :  {
         "sex": "female",
         "species": "cat",
         "DOB": "5/4/2016",
@@ -19,26 +19,157 @@ var myobject = {
         "breed": "Domestic short hair",
         "weight": "5.25",
         "spayed": "false",
-        "chip": "982000410760935"
-    }], //get number of pets of owner
-    get num_pets() {
-        return this.owner.pets.length
+        "chip": "9820000410760935"
+    },
+}
+
+//future use
+var rabies_vaccine = {
+
+    "jocko" : {
+        "producer" : "merck",
+        "vaccine_lot_number" : "165179 (expires 9/19/2017)",
+        "tag_number" : "14985",
+        "date_vaccinated"  : "3/1/2017",
+        "expires" : "3/1/2018",
+        "veterinarian" : "lauren adduci license #24007962A",
+        "clinic_info" : "4525 s burnett drive, south bend, in, 46614 (574-291-7729)"
+    },
+    
+    "rose" : {
+        "name" : "rose",
+        "producer" : "merck",
+        "vaccine_lot_number" : "165179 (expires 9/19/2017)",
+        "tag_number" : "14985",
+        "date_vaccinated"  : "3/1/2017",
+        "expires" : "3/1/2018",
+        "veterinarian" : "lauren adduci license #24007962A",
+        "clinic_info" : "4525 s burnett drive, south bend, in, 46614 (574-291-7729)"  
     }
 };
 
-//Display random cat API
-function rCAT() {
-    div = document.createElement('div');
-    div.id = "randomAPI";
-    document.getElementById('user-form').appendChild(div);
+//DOM shorcut variables 
+main = document.getElementById('main_content');
+flex = document.getElementById('flex_wrapper');
+l = document.getElementById('content_left');
+r = document.getElementById('content_right');
 
+//page onload 
+document.addEventListener("DOMContentLoaded", function(event) {
+
+    //content on the left
+    l_section = document.createElement('section');
+    l_section.id = "content_left";
+    l_img = document.createElement('img');
+    l_img.id = "img_left";
     var src = "http://thecatapi.com/api/images/get?format=src&type=gif"
-    img = document.createElement('img');
-    img.src = src;
-    document.getElementById('randomAPI').appendChild(img);
+    l_img.src = src;
+    l_img.alt = "cats_API";
+    //dynamic inline style
+    l_img.style.width = "400px";
+    l_img.style.margin = "0 auto";
+    l_section.appendChild(l_img);
+    flex.appendChild(l_section);
+    console.log("img_left loaded");
 
+    //content on the right
+    r_section = document.createElement('section');
+    r_section.id = "content_right";
+    r_img = document.createElement('img');
+    r_img.id = "img_right";
+    r_img.src = src;
+    r_img.alt = "cats_API";
+    //dynamic inline style
+    r_img.style.width = "400px";
+    r_img.style.margin = "0 auto";
+    r_section.appendChild(r_img);
+    flex.appendChild(r_section);
+    console.log("img_right loaded");
+
+    //time
+    time = document.createElement('time');
+    time.id = "time";
+    var d = document.createTextNode(Date());
+    time.appendChild(d);
+    main.appendChild(time);
+    console.log("Time loaded");
+
+    flex.style.margin = "100px 0 10px 0" 
+});
+
+//detail button - display json data to html with DOM manipulation
+$('#detail').on("click", function() {
+    showInfo();
+    showIns();
+});
+
+//reset button - removes content in left and right section
+$('#reset').on("click", function() {
+    l_section.innerHTML = "";
+    r_section.innerHTML = "";
+});
+
+function showInfo(){
+    //clear out content first
+    l_section.innerHTML = "";
+    r_section.innerHTML = "";
+
+    //create a wrapper with background
+    wrapper_div = document.createElement('div');
+    wrapper_div.id = "right_content_wrapper";
+
+
+    //create unordered list
+    ulist = document.createElement('ul');
+    ulist.id = "pets_detail";
+
+
+    //first line jocko in list 
+    //create text to be appened in <li> tag
+    list_jocko = document.createElement('li');
+    jtxt = document.createTextNode("name" + ": " + Object.keys(pets)[0]);
+    list_jocko.appendChild(jtxt);
+    ulist.appendChild(list_jocko);
+    //for loop to get keys and values in <li> tag. Tried 'for each loop', but it won't create new line with <li> or \n
+    for (var i =0; i< Object.keys(pets.jocko).length; i++){
+        list_jocko = document.createElement('li');
+        list_jocko.id = i+1;
+        jtxt = document.createTextNode(Object.keys(pets.jocko)[i] + ": " + Object.values(pets.jocko)[i]);
+        list_jocko.appendChild(jtxt);
+        ulist.appendChild(list_jocko);
+    }
+
+    //first line rose name in list
+    //create text to be appened in <li> tag
+    list_rose = document.createElement('li');
+    jtxt = document.createTextNode("name" + ": " + Object.keys(pets)[1]);
+    list_rose.appendChild(jtxt);
+    ulist.appendChild(list_rose);
+    //for loop
+    for (var r =0; r< Object.keys(pets.rose).length; r++){
+        list_rose = document.createElement('li');
+        list_rose.id = r+1;
+        rtxt = document.createTextNode(Object.keys(pets.rose)[r] + ": " + Object.values(pets.rose)[r]);
+        list_rose.appendChild(rtxt);
+        ulist.appendChild(list_rose);
+    }
+
+
+    //append list to the <ul> tag
+    r_section.appendChild(wrapper_div);
+    wrapper_div.appendChild(ulist);
 }
 
+function showIns(){
+    var src = "https://www.instagram.com/p/BZFcEXwg1Sm/embed/",
+
+    iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.setAttribute('scrolling','no');
+    iframe.width = "400";
+    iframe.height = "650";
+    l_section.appendChild(iframe) //append the div to result_2 div
+}
 
 //true/false validator
 function tfValid(s) {
@@ -50,82 +181,20 @@ function tfValid(s) {
     } else
         return no;
 }
+    // //Display list of details of pets
+    // r_section.innerHTML += "<li>" + "name: " + Object.keys(pets)[0] + "</li>";
+    // Object.keys(pets.jocko).forEach(function(key) {
+    //     r_section.innerHTML +=  "<li>" + key + ': ' + pets.jocko[key] + "</li>";
+    // });
+    // // r_section.innerHTML += "<li>" + "" + "</li>";
+    // // r_section.innerHTML += "<li>" + "name: " + Object.keys(pets)[1] + "</li>";
+    
+    // Object.keys(pets.rose).forEach(function(key) {
+    //     // r_section.innerHTML += "<li>";
+    //     list = document.createTextNode(key + ": " + pets.rose[key] );
 
-
-//grab results div in html
-x = document.getElementById('result_1');
-y = document.getElementById('result_2');
-
-window.onload = rCAT;
-
-
-y.innerHTML = "Today's date: " + (Date());
-//display json data to html with DOM manipulation
-$('#submit').on("click", function() {
-    document.getElementById('randomAPI').innerHTML = "";
-    document.getElementById('flex_wrapper').style.marginTop = "65px";
-    y.innerHTML += "<br>" + "pet's detail: " + "<br>";
-    y.innerHTML += "name: " + myobject.pet[0].name + "<br>";
-    y.innerHTML += "gender: " + myobject.pet[0].sex + "<br>";
-    y.innerHTML += "species: " + myobject.pet[0].species + "<br>";
-    y.innerHTML += "age: " + myobject.pet[0].age + "<br>";
-    y.innerHTML += "color: " + myobject.pet[0].color + "<br>";
-    y.innerHTML += "breed: " + myobject.pet[0].breed + "<br>";
-    y.innerHTML += "weight: " + myobject.pet[0].weight + "lb" + "<br>";
-    y.innerHTML += "spayed: " + tfValid(myobject.pet[0].spayed) + "<br>";
-    y.innerHTML += "<br>";
-    y.innerHTML += "<br>";
-    y.innerHTML += "name: " + myobject.pet[1].name + "<br>";
-    y.innerHTML += "gender: " + myobject.pet[1].sex + "<br>";
-    y.innerHTML += "species: " + myobject.pet[1].species + "<br>";
-    y.innerHTML += "DOB: " + myobject.pet[1].DOB + "<br>";
-    y.innerHTML += "color: " + myobject.pet[1].color + "<br>";
-    y.innerHTML += "breed: " + myobject.pet[1].breed + "<br>";
-    y.innerHTML += "weight: " + myobject.pet[1].weight + "lb" + "<br>";
-    y.innerHTML += "spayed: " + tfValid(myobject.pet[1].spayed) + "<br>";
-    y.innerHTML += "chip#: " + myobject.pet[1].chip + "<br>";
-    something();
-});
-
-
-
-
-//to display my cats
-$('#submit').on("click", function() {
-
-    var src = "https://www.instagram.com/p/BZFcEXwg1Sm/embed/",
-        div = document.createElement('div'); //creating a div tag
-    div.id = "left"; //assignning id left to the div
-    document.getElementById('result_1').appendChild(div) //append the div to result_2 div
-
-    // img = document.createElement('img');
-    // img.src = src;
-    // document.getElementById('result_2').appendChild(img);
-
-    iframe = document.createElement('iframe');
-    iframe.src = src;
-    iframe.setAttribute('scrolling','no');
-    iframe.width = "400";
-    iframe.height = "650";
-    document.getElementById('result_1').appendChild(iframe);
-
-});
-
-
-var something = (function() {
-    var executed = false;
-    return function() {
-        if (!executed) {
-            executed = true;
-            // do something
-        }
-    };
-})();
-
-
-
-
-//reload the page to get new random cat gif
-$('#reset').on("click", function() {
-    window.location.reload();
-});
+    //     // r_section.innerHTML += "</li>";
+    //     ulist.appendChild(list);
+    //     console.log(list);
+    //     r_section.appendChild(ulist);
+    // });

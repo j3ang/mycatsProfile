@@ -60,7 +60,7 @@ table {
 /***********************************************/
 
 /* page structure */
-#user-form {
+#main_content {
   display: block;
   width: 800px;
   margin: 0 auto;
@@ -85,21 +85,41 @@ button{
   cursor: hand; 
 }
 
-#result_1, #result_2{
+#left, #right{
   text-transform: capitalize;
 }
 
-#result_2{
+#right{
   display: flex;
   flex-direction: column;
   padding: 65px;
-
 }
 
+li{
+  text-transform: capitalize;
+  list-style: none;
+}
 
 #flex_wrapper{
   display: flex;
   flex-direction: row;
+}
+
+#content_left, #content_right{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+#right_content_wrapper{
+  height: 500px;
+  margin-top: 50px;
+  padding-left: 40px;
+  padding-top: 80px;
+  background-image: url('notebook.jpg');
+  background-size: 400px;
+  background-repeat: no-repeat;
 }
 
 
