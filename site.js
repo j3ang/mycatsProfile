@@ -109,6 +109,7 @@ $('#reset').on("click", function() {
     r_section.innerHTML = "";
 });
 
+//function to show infomation of pets from the json objects
 function showInfo(){
     //clear out content first
     l_section.innerHTML = "";
@@ -117,7 +118,7 @@ function showInfo(){
     //create a wrapper with background
     wrapper_div = document.createElement('div');
     wrapper_div.id = "right_content_wrapper";
-
+    wrapper_div.appendChild(time);
 
     //create unordered list
     ulist = document.createElement('ul');
@@ -133,7 +134,7 @@ function showInfo(){
     //for loop to get keys and values in <li> tag. Tried 'for each loop', but it won't create new line with <li> or \n
     for (var i =0; i< Object.keys(pets.jocko).length; i++){
         list_jocko = document.createElement('li');
-        list_jocko.id = i+1;
+        list_jocko.id = "list"+i+1;
         jtxt = document.createTextNode(Object.keys(pets.jocko)[i] + ": " + Object.values(pets.jocko)[i]);
         list_jocko.appendChild(jtxt);
         ulist.appendChild(list_jocko);
@@ -148,7 +149,7 @@ function showInfo(){
     //for loop
     for (var r =0; r< Object.keys(pets.rose).length; r++){
         list_rose = document.createElement('li');
-        list_rose.id = r+1;
+        list_rose.id = "list"+r+1;
         rtxt = document.createTextNode(Object.keys(pets.rose)[r] + ": " + Object.values(pets.rose)[r]);
         list_rose.appendChild(rtxt);
         ulist.appendChild(list_rose);
@@ -160,6 +161,7 @@ function showInfo(){
     wrapper_div.appendChild(ulist);
 }
 
+//function to display instagram pics with iframe
 function showIns(){
     var src = "https://www.instagram.com/p/BZFcEXwg1Sm/embed/",
 
@@ -181,6 +183,24 @@ function tfValid(s) {
     } else
         return no;
 }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // //Display list of details of pets
     // r_section.innerHTML += "<li>" + "name: " + Object.keys(pets)[0] + "</li>";
     // Object.keys(pets.jocko).forEach(function(key) {

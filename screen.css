@@ -123,9 +123,26 @@ li{
 }
 
 
+#detail, #reset{
+  margin-top: 40px;
+}
 
+#pets_detail{
+  margin-top: 24px;
+}
 
+li{
+  border-left: solid red;
+  border-style: double;
+  padding-left: 5px;
+}
 
+#list01{
+  margin-top: 16px;
+}
+#list71{
+  margin-bottom: 20px;
+}
 
 
 
