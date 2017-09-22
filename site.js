@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     l_section.id = "content_left";
     l_img = document.createElement("img");
     l_img.id = "img_left";
-    var src = "http://thecatapi.com/api/images/get?format=src&type=gif"
+    var src = "http://thecatapi.com/api/images/get?format=src&type=gif";
     l_img.src = src;
     l_img.alt = "cats_API";
     //dynamic inline style
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     main.appendChild(time);
     console.log("Time loaded");
 
-    flex.style.margin = "100px 0 10px 0"
+    flex.style.margin = "100px 0 10px 0";
 });
 
 //detail button - display json data to html with DOM manipulation
